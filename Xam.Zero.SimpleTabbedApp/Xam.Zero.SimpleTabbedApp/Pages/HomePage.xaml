@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Xam.Zero.SimpleTabbedApp.Pages.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:markupExtensions="clr-namespace:Xam.Zero.MarkupExtensions;assembly=Xam.Zero"
+    xmlns:viewModels="clr-namespace:Xam.Zero.SimpleTabbedApp.ViewModels;assembly=Xam.Zero.SimpleTabbedApp"
+    x:Name="Home"
+    BindingContext="{markupExtensions:ShellPagedViewModelMarkup ViewModel={x:Type viewModels:HomeViewModel},
+                                                                Page={x:Reference Home}}">
+
+    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+        <Label HorizontalOptions="CenterAndExpand" Text="Home" />
+        <Button Command="{Binding GetDummyDataCommand}" Text="Check if IoC works" />
+        <Button Command="{Binding TestPushCommand}" Text="TestPush" />
+    </StackLayout>
+</ContentPage>
